@@ -62,7 +62,19 @@ class Dot
 
   void calfitness()
   {
-    float distancetogoal = dist(pos.x, pos.y, goal.x, goal.y);
-    fitness = 1.0/(distancetogoal * distancetogoal);
+    if (reachedgoal)
+    {
+      fitness = 1.0/(float)(brain.step * brain.step);
+    } else {   
+      float distancetogoal = dist(pos.x, pos.y, goal.x, goal.y);
+      fitness = 1.0/(distancetogoal * distancetogoal);
+    }
+  }
+
+  Dot baby()
+  {
+    Dot bebs = new Dot();
+    bebs.brain = brain.clone();
+    return bebs;
   }
 }

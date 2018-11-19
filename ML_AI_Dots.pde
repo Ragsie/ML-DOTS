@@ -17,8 +17,8 @@ void draw()
   if (run.alldotsdead())
   {
     run.calfitness();
-   // run.naturalselection();
-   // run.mutate();
+    run.naturalselection();
+    run.mutate();
   } else {
     run.update();
     run.show();
